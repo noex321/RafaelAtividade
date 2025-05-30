@@ -27,8 +27,12 @@ function DrawerNavigator({ setIsAuthenticated }) {
       }}
     >
       <Drawer.Screen name="Inicio">
-        {() => <InicioScreen setIsAuthenticated={setIsAuthenticated} />}
+        {(props) => <InicioScreen {...props} setIsAuthenticated={setIsAuthenticated} />}
       </Drawer.Screen>
+      <Drawer.Screen name="Cursos">
+        {(props) => <InicioScreen {...props} setIsAuthenticated={setIsAuthenticated} />}
+      </Drawer.Screen>
+
     </Drawer.Navigator>
   );
 }
@@ -42,7 +46,7 @@ export default function AppNavigator({ setIsAuthenticated }) {
       </Stack.Screen>
 
       <Stack.Screen
-        name="Projetos"
+        name="ProjetosScreen"
         options={{
           headerShown: true,
           title: 'Projetos',

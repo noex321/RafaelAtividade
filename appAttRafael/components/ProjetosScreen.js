@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const InicioScreen = () => {
-  // Dados exemplo
+const ProjetosScreen = () => {
+
   const projeto = {
     nome: 'Projeto de Engenharia de Software',
     alunos: 'Ana Silva; João Souza; Maria Oliveira',
@@ -13,13 +13,11 @@ const InicioScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        {/* Parte superior */}
+
         <Text style={styles.nomeProjeto}>{projeto.nome}</Text>
 
-        {/* Parte do meio */}
         <Text style={styles.alunos}>{projeto.alunos}</Text>
 
-        {/* Parte inferior */}
         <View style={styles.footer}>
           <Text style={styles.status}>{projeto.status}</Text>
           <Text style={styles.dataHora}>{projeto.dataHora}</Text>
@@ -32,20 +30,19 @@ const InicioScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#121212',  // fundo escuro para combinar com o estilo
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
     padding: 20,
   },
   card: {
-    backgroundColor: '#0D47A1', // azul escuro
+    backgroundColor: '#0D47A1',
     borderRadius: 15,
     padding: 20,
     width: '100%',
     shadowColor: '#000',
     shadowOpacity: 0.3,
     shadowRadius: 10,
-    elevation: 8,  // sombra para Android
+    elevation: 8,
+    marginBottom: 15,
   },
   nomeProjeto: {
     fontSize: 20,
@@ -66,7 +63,7 @@ const styles = StyleSheet.create({
   },
   status: {
     fontSize: 14,
-    color: '#FFCC00', // amarelo para chamar atenção
+    color: '#FFCC00',
     fontWeight: '600',
   },
   dataHora: {
@@ -75,4 +72,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default InicioScreen;
+export default ProjetosScreen;

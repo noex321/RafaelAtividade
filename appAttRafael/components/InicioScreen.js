@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { CurrentRenderContext } from '@react-navigation/native';
 
-const InicioScreen = (navigation) => {
+const InicioScreen = ({ navigation }) => {
   const [cursoSelecionado, setCursoSelecionado] = useState('');
   const [periodoSelecionado, setPeriodoSelecionado] = useState('');
 
@@ -54,7 +55,7 @@ const InicioScreen = (navigation) => {
 
       {periodoSelecionado !== '' && (
         <>
-          <TouchableOpacity onPress={telaAnalisaCurso}>
+          <TouchableOpacity style={styles.button} onPress={telaAnalisaCurso}>
             <Text style={styles.buttonText}>Analisar</Text>
           </TouchableOpacity>
         </>
@@ -86,7 +87,22 @@ const styles = StyleSheet.create({
     color: '#000000',
     marginBottom: 15,
     textAlign: 'center',
-  }
+  },
+  button: {
+    marginTop: 20,
+    backgroundColor: '#0D47A1',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 8,
+    width: '50%',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
 });
 
 export default InicioScreen;
