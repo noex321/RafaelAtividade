@@ -23,6 +23,7 @@ const ProjetosScreen = () => {
           <Text style={styles.dataHora}>{projeto.dataHora}</Text>
         </View>
       </View>
+
     </View>
   );
 };

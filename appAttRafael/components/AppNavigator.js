@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import InicioScreen from './InicioScreen.js';
 import ProjetosScreen from './ProjetosScreen.js';
+import CursosScreen from './CursosScreen.js';
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -30,7 +31,7 @@ function DrawerNavigator({ setIsAuthenticated }) {
         {(props) => <InicioScreen {...props} setIsAuthenticated={setIsAuthenticated} />}
       </Drawer.Screen>
       <Drawer.Screen name="Cursos">
-        {(props) => <InicioScreen {...props} setIsAuthenticated={setIsAuthenticated} />}
+        {(props) => <CursosScreen {...props} setIsAuthenticated={setIsAuthenticated} />}
       </Drawer.Screen>
 
     </Drawer.Navigator>

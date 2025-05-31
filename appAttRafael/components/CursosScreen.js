@@ -6,17 +6,24 @@ import {
   StyleSheet,
   TouchableOpacity,
   Modal,
+  FlatList,
 } from 'react-native';
 
 const CursosScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [nomeCurso, setNomeCurso] = useState('');
   const [periodoMax, setPeriodoMax] = useState('');
+  const [cursos, setCursos] = useState([]); // Lista de cursos cadastrados
 
   const handleSalvarCurso = () => {
     if (nomeCurso && periodoMax) {
-      // Aqui você pode salvar o curso na lista (ex: em um estado, ou API)
-      console.log('Curso salvo:', nomeCurso, periodoMax);
+      const novoCurso = {
+        id: Date.now().toString(),
+        nome: nomeCurso,
+        periodo: periodoMax,
+      };
+
+      setCursos([...cursos, novoCurso]);
       setModalVisible(false);
       setNomeCurso('');
       setPeriodoMax('');
@@ -24,6 +31,13 @@ const CursosScreen = () => {
       alert('Preencha todos os campos!');
     }
   };
+
+  const renderCurso = ({ item }) => (
+    <View style={styles.card}>
+      <Text style={styles.cursoNome}>{item.nome}</Text>
+      <Text style={styles.cursoPeriodo}>Período Máximo: {item.periodo}</Text>
+    </View>
+  );
 
   return (
     <View style={styles.container}>
@@ -68,7 +82,13 @@ const CursosScreen = () => {
         </View>
       </Modal>
 
-      {/* Aqui vai a futura lista de cursos */}
+      {/* Lista de cursos */}
+      <FlatList
+        data={cursos}
+        keyExtractor={(item) => item.id}
+        renderItem={renderCurso}
+        ListEmptyComponent={<Text style={{ textAlign: 'center', marginTop: 20 }}>Nenhum curso cadastrado.</Text>}
+      />
     </View>
   );
 };
@@ -132,6 +152,23 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#FFFFFF',
     fontWeight: 'bold',
+  },
+  card: {
+    backgroundColor: '#E3F2FD',
+    padding: 15,
+    marginBottom: 15,
+    borderRadius: 10,
+    elevation: 2,
+  },
+  cursoNome: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#0D47A1',
+  },
+  cursoPeriodo: {
+    fontSize: 14,
+    color: '#333',
+    marginTop: 5,
   },
 });
 
