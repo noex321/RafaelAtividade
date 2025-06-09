@@ -26,7 +26,7 @@ export default function LoginScreen({ navigation }) {
       const user = userCredential.user;
 
       // 2. Com o login bem-sucedido, busca o documento do usuário no Firestore
-      const userDocRef = doc(db, 'usuario', user.uid);
+      const userDocRef = doc(db, 'pessoa', user.uid);
       const userDoc = await getDoc(userDocRef);
 
       // 3. Verifica se o documento do usuário existe

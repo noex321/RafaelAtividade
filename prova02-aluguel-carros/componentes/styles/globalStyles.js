@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const colors = {
   primary: '#007BFF',
   secondary: '#004A94',
-  background: '#F0F8FF', // Fundo azul bem claro (AliceBlue)
+  background: '#F0F8FF',
   white: '#FFFFFF',
   text: '#333333',
 };
