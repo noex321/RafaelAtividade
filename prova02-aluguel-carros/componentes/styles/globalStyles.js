@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 const colors = {
-  primary: '#007BFF',
-  secondary: '#004A94',
-  background: '#F0F8FF',
+  primary: '#545454',
+  secondary: '#545454',
+  background: '#d9d9d9',
   white: '#FFFFFF',
   text: '#333333',
 };
@@ -25,7 +25,6 @@ export default StyleSheet.create({
     width: '100%',
     height: 50,
     backgroundColor: colors.white,
-    borderRadius: 8,
     paddingHorizontal: 15,
     marginBottom: 12,
     fontSize: 16,
@@ -37,10 +36,8 @@ export default StyleSheet.create({
     width: '100%',
     height: 50,
     backgroundColor: colors.primary,
-    borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 3,
   },
   buttonText: {
     color: colors.white,

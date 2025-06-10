@@ -100,7 +100,7 @@ export default function GerenciarAlunosScreen() {
           <Text style={styles.editButton}>Editar</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleDeletarAluno(item.id)}>
-          <Text style={styles.deleteButton}>Excluir</Text>
+          <Text style={styles.deleteButton}>Deletar</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -114,14 +114,14 @@ export default function GerenciarAlunosScreen() {
       {/* Formulário */}
       <View style={styles.formContainer}>
         <Text style={globalStyles.title}>{editingAlunoId ? 'Editar Aluno' : 'Cadastrar Aluno'}</Text>
-        <TextInput placeholder="Nome Completo do Aluno" style={globalStyles.input} value={form.nome} onChangeText={(v) => handleChange('nome', v)} />
-        <TextInput placeholder="Email do Aluno" style={globalStyles.input} value={form.email} onChangeText={(v) => handleChange('email', v)} keyboardType="email-address" autoCapitalize="none" />
-        <TextInput placeholder="Número de Matrícula" style={globalStyles.input} value={form.matricula} onChangeText={(v) => handleChange('matricula', v)} keyboardType="numeric" />
-        <TextInput placeholder="Curso do Aluno" style={globalStyles.input} value={form.curso} onChangeText={(v) => handleChange('curso', v)} />
+        <TextInput placeholder="Nome" style={globalStyles.input} value={form.nome} onChangeText={(v) => handleChange('nome', v)} />
+        <TextInput placeholder="Email" style={globalStyles.input} value={form.email} onChangeText={(v) => handleChange('email', v)} keyboardType="email-address" autoCapitalize="none" />
+        <TextInput placeholder="Matrícula" style={globalStyles.input} value={form.matricula} onChangeText={(v) => handleChange('matricula', v)} keyboardType="numeric" />
+        <TextInput placeholder="Curso" style={globalStyles.input} value={form.curso} onChangeText={(v) => handleChange('curso', v)} />
         <TextInput placeholder="Período" style={globalStyles.input} value={form.periodo} onChangeText={(v) => handleChange('periodo', v)} keyboardType="numeric" />
         
         <TouchableOpacity style={globalStyles.button} onPress={handleSalvarAluno}>
-          <Text style={globalStyles.buttonText}>{editingAlunoId ? 'Atualizar Aluno' : 'Salvar Novo Aluno'}</Text>
+          <Text style={globalStyles.buttonText}>{editingAlunoId ? 'Atualizar Aluno' : 'Cadastrar Aluno'}</Text>
         </TouchableOpacity>
 
         {editingAlunoId && (
@@ -161,22 +161,16 @@ const styles = StyleSheet.create({
     itemContainer: {
         backgroundColor: '#fff',
         padding: 15,
-        borderRadius: 8,
         marginBottom: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        elevation: 2,
-        shadowColor: '#000',
-        shadowOpacity: 0.1,
-        shadowRadius: 5,
     },
     itemTextContainer: {
         flex: 1,
     },
     itemTitle: {
         fontSize: 16,
-        fontWeight: 'bold',
         color: '#333',
     },
     itemSubtitle: {
@@ -188,16 +182,14 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     editButton: {
-        color: '#007BFF',
         fontWeight: 'bold',
         marginRight: 15,
     },
     deleteButton: {
-        color: '#dc3545',
         fontWeight: 'bold',
     },
     cancelButton: {
-      backgroundColor: '#6c757d',
+      backgroundColor: '#545454',
       marginTop: 10,
     }
 });

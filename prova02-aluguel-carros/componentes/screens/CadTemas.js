@@ -97,7 +97,7 @@ export default function GerenciarTemasScreen() {
           <Text style={styles.editButton}>Editar</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleDeletarTema(item.id)}>
-          <Text style={styles.deleteButton}>Excluir</Text>
+          <Text style={styles.deleteButton}>Deletar</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -111,20 +111,20 @@ export default function GerenciarTemasScreen() {
       {/* Formulário */}
       <View style={styles.formContainer}>
         <Text style={globalStyles.title}>{editingTemaId ? 'Editar Tema' : 'Cadastrar Tema'}</Text>
-        <TextInput placeholder="Título do Projeto" style={globalStyles.input} value={form.titulo} onChangeText={(v) => handleChange('titulo', v)} />
+        <TextInput placeholder="Título" style={globalStyles.input} value={form.titulo} onChangeText={(v) => handleChange('titulo', v)} />
         <TextInput 
-            placeholder="Descrição do Projeto" 
-            style={[globalStyles.input, {height: 80, textAlignVertical: 'top'}]} 
+            placeholder="Descrição" 
+            style={[globalStyles.input, {textAlignVertical: 'top'}]} 
             value={form.descricao} 
             onChangeText={(v) => handleChange('descricao', v)}
             multiline={true}
             numberOfLines={4}
         />
-        <TextInput placeholder="Curso Alvo" style={globalStyles.input} value={form.cursoAlvo} onChangeText={(v) => handleChange('cursoAlvo', v)} />
-        <TextInput placeholder="Professor Responsável" style={globalStyles.input} value={form.professorResponsavel} onChangeText={(v) => handleChange('professorResponsavel', v)} />
+        <TextInput placeholder="Curso" style={globalStyles.input} value={form.cursoAlvo} onChangeText={(v) => handleChange('cursoAlvo', v)} />
+        <TextInput placeholder="Responsável" style={globalStyles.input} value={form.professorResponsavel} onChangeText={(v) => handleChange('professorResponsavel', v)} />
         
         <TouchableOpacity style={globalStyles.button} onPress={handleSalvarTema}>
-          <Text style={globalStyles.buttonText}>{editingTemaId ? 'Atualizar Tema' : 'Salvar Novo Tema'}</Text>
+          <Text style={globalStyles.buttonText}>{editingTemaId ? 'Atualizar Tema' : 'Cadastrar Tema'}</Text>
         </TouchableOpacity>
 
         {editingTemaId && (
@@ -164,12 +164,10 @@ const styles = StyleSheet.create({
     itemContainer: {
         backgroundColor: '#fff',
         padding: 15,
-        borderRadius: 8,
         marginBottom: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        elevation: 2,
         shadowColor: '#000',
         shadowOpacity: 0.1,
         shadowRadius: 5,
@@ -180,7 +178,6 @@ const styles = StyleSheet.create({
     },
     itemTitle: {
         fontSize: 16,
-        fontWeight: 'bold',
         color: '#333',
     },
     itemSubtitle: {
@@ -198,12 +195,10 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     editButton: {
-        color: '#007BFF',
         fontWeight: 'bold',
         marginRight: 15,
     },
     deleteButton: {
-        color: '#dc3545',
         fontWeight: 'bold',
     },
     cancelButton: {

@@ -33,11 +33,11 @@ export default function LoginScreen({ navigation }) {
         const userType = userData.tipo;
 
         if (userType === 'administrador') {
-          navigation.replace('InicioAdmin');
+          navigation.replace('Painel');
         } else if (userType === 'Avaliador') {
-          navigation.replace('InicioAvaliador');
+          navigation.replace('Painel Avaliador');
         } else if (userType === 'Aluno') {
-          navigation.replace('InicioAlunos');
+          navigation.replace('Painel Aluno');
         } else {
 
           Alert.alert('Erro', 'Tipo de usuário desconhecido.');

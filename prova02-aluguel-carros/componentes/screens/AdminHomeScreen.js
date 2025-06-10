@@ -7,27 +7,27 @@ export default function AdminHomeScreen({ navigation }) {
 
     <View style={globalStyles.container}>
       
-      <Text style={globalStyles.title}>Painel do Admin</Text>
+      <Text style={globalStyles.title}>Painel de Administração</Text>
 
       <TouchableOpacity
-        style={globalStyles.button}
-        onPress={() => navigation.navigate('CursosFaculdade')}
+        style={[globalStyles.button, styles.buttonSpacing]}
+        onPress={() => navigation.navigate('Cursos Da Faculdade')}
       >
-        <Text style={globalStyles.buttonText}>Gerenciar Cursos</Text>
+        <Text style={globalStyles.buttonText}>Cursos</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={[globalStyles.button, styles.buttonSpacing]}
-        onPress={() => navigation.navigate('CadastroAlunos')}
+        onPress={() => navigation.navigate('Cadastrar Alunos')}
       >
-        <Text style={globalStyles.buttonText}>Gerenciar Alunos</Text>
+        <Text style={globalStyles.buttonText}>Alunos</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={[globalStyles.button, styles.buttonSpacing]}
-        onPress={() => navigation.navigate('CadastroTemas')}
+        onPress={() => navigation.navigate('Cadastrar Temas')}
       >
-        <Text style={globalStyles.buttonText}>Gerenciar Temas</Text>
+        <Text style={globalStyles.buttonText}>Temas</Text>
       </TouchableOpacity>
 
     </View>
@@ -36,6 +36,7 @@ export default function AdminHomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     buttonSpacing: {
-        marginTop: 15,
-    }
+        marginTop: 80,
+        height: 80,
+    },
 });

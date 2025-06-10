@@ -13,7 +13,7 @@ export default function AdminHomeScreen({ navigation }) {
         style={[globalStyles.button, styles.buttonSpacing]}
         onPress={() => navigation.navigate('CadastroTemas')}
       >
-        <Text style={globalStyles.buttonText}>Gerenciar Temas</Text>
+        <Text style={globalStyles.buttonText}>Temas</Text>
       </TouchableOpacity>
 
     </View>

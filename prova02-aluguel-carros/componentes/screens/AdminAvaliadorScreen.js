@@ -11,9 +11,9 @@ export default function AdminHomeScreen({ navigation }) {
 
       <TouchableOpacity
         style={[globalStyles.button, styles.buttonSpacing]}
-        onPress={() => navigation.navigate('CadastroAlunos')}
+        onPress={() => navigation.navigate('Cadastrar Alunos')}
       >
-        <Text style={globalStyles.buttonText}>Gerenciar Alunos</Text>
+        <Text style={globalStyles.buttonText}>Alunos</Text>
       </TouchableOpacity>
 
     </View>

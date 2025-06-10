@@ -102,7 +102,7 @@ export default function GerenciarCursosScreen() {
           <Text style={styles.editButton}>Editar</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleDeletar(item.id)}>
-          <Text style={styles.deleteButton}>Excluir</Text>
+          <Text style={styles.deleteButton}>Deletar</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -114,26 +114,26 @@ export default function GerenciarCursosScreen() {
       <View style={styles.formContainer}>
         <Text style={globalStyles.title}>{editingCursoId ? 'Editar Curso' : 'Cadastrar Curso'}</Text>
         <TextInput
-          placeholder="Nome do Curso"
+          placeholder="Nome"
           style={globalStyles.input}
           value={form.nome}
           onChangeText={(v) => handleChange('nome', v)}
         />
         <TextInput
-          placeholder="Duração (em anos)"
+          placeholder="Duração (anual)"
           style={globalStyles.input}
           value={form.duracao}
           onChangeText={(v) => handleChange('duracao', v)}
           keyboardType="numeric"
         />
         <TextInput
-          placeholder="Nome do Coordenador"
+          placeholder="Coordenador"
           style={globalStyles.input}
           value={form.coordenador}
           onChangeText={(v) => handleChange('coordenador', v)}
         />
         <TouchableOpacity style={globalStyles.button} onPress={handleSalvar}>
-          <Text style={globalStyles.buttonText}>{editingCursoId ? 'Atualizar Curso' : 'Salvar Novo Curso'}</Text>
+          <Text style={globalStyles.buttonText}>{editingCursoId ? 'Atualizar Curso' : 'Cadastrar Curso'}</Text>
         </TouchableOpacity>
         {editingCursoId && (
             <TouchableOpacity style={[globalStyles.button, styles.cancelButton]} onPress={() => {
@@ -170,23 +170,17 @@ const styles = StyleSheet.create({
     },
     itemContainer: {
         backgroundColor: '#fff',
-        padding: 15,
-        borderRadius: 8,
+        padding: 10,
         marginBottom: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        elevation: 2,
-        shadowColor: '#000',
-        shadowOpacity: 0.1,
-        shadowRadius: 5,
     },
     itemTextContainer: {
         flex: 1,
     },
     itemTitle: {
         fontSize: 16,
-        fontWeight: 'bold',
         color: '#333',
     },
     itemSubtitle: {
@@ -198,12 +192,10 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     editButton: {
-        color: '#007BFF',
         fontWeight: 'bold',
         marginRight: 15,
     },
     deleteButton: {
-        color: '#dc3545',
         fontWeight: 'bold',
     },
     cancelButton: {
